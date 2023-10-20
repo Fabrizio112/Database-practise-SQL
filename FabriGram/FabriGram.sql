@@ -1,0 +1,81 @@
+CREATE DATABASE IF NOT EXISTS fabrigram;
+
+USE fabrigram;
+
+
+CREATE TABLE countries(
+	country_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(50)
+);
+
+CREATE TABLE users(
+	user_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	user_date DATETIME UNIQUE,
+	email VARCHAR(50) UNIQUE,
+	user_password VARCHAR(50),
+	phone BIGINT,
+	bio TEXT,
+	web VARCHAR(255),
+	avatar VARCHAR(255),
+	birthdate DATETIME,
+	geneder VARCHAR(50),
+	country INT UNSIGNED,
+	FOREIGN KEY (country)
+		REFERENCES countries(country_id)
+		ON DELETE RESTRICT
+		ON UPDATE CASCADE
+);
+
+CREATE TABLE posts(
+	post_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	post_data DATETIME,
+	plot TEXT,
+	photo VARCHAR(255),
+	user_id INT UNSIGNED,
+	FOREIGN KEY (user_id)
+		REFERENCES users(user_id)
+		ON DELETE RESTRICT
+		ON UPDATE CASCADE
+);
+
+CREATE TABLE follows(
+	follow_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	follow_date DATETIME,
+	follow_user VARCHAR(50),
+	user_id INT UNSIGNED,
+	FOREIGN KEY (user_id)
+		REFERENCES users(user_id)
+		ON DELETE RESTRICT
+		ON UPDATE CASCADE
+);
+
+CREATE TABLE hearts(
+	heart_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	heart_date DATETIME,
+	post INT UNSIGNED,
+	user_id INT UNSIGNED,
+	FOREIGN KEY (user_id)
+		REFERENCES users(user_id)
+		ON DELETE RESTRICT
+		ON UPDATE CASCADE,
+	FOREIGN KEY (post)
+		REFERENCES posts(post_id)
+		ON DELETE RESTRICT
+		ON UPDATE CASCADE
+);
+
+CREATE TABLE comments(
+	comment_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	comment_date DATETIME,
+	comment TEXT,
+	post INT UNSIGNED ,
+	user_id INT UNSIGNED,
+	FOREIGN KEY (user_id)
+		REFERENCES users(user_id)
+		ON DELETE RESTRICT
+		ON UPDATE CASCADE,
+	FOREIGN KEY (post)
+		REFERENCES posts(post_id)
+		ON DELETE RESTRICT
+		ON UPDATE CASCADE
+);

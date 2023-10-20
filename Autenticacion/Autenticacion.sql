@@ -1,0 +1,55 @@
+CREATE DATABASE IF NOT EXISTS autenticacion;
+
+USE autenticacion;
+
+CREATE TABLE permisos(
+	permiso_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	nombre VARCHAR(50),
+	descripcion TEXT
+);
+
+CREATE TABLE roles(
+	rol_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	nombre VARCHAR(50),
+	descripcion TEXT
+);
+
+CREATE TABLE usuarios(
+	usuario_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	username VARCHAR(50) UNIQUE,
+	usuario_password VARCHAR(50),
+	email VARCHAR(50) UNIQUE ,
+	apellido VARCHAR(50),
+	avatar VARCHAR(255),
+	activo BOOLEAN,
+	fecha_creacion DATETIME,
+	fecha_actualizacion DATETIME
+);
+
+CREATE TABLE roles_x_usuario(
+	rxu_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	usuario INT UNSIGNED,
+	rol INT UNSIGNED,
+	FOREIGN KEY (usuario)
+		REFERENCES usuarios(usuario_id)
+		ON DELETE RESTRICT
+		ON UPDATE CASCADE,
+	FOREIGN KEY (rol)
+		REFERENCES roles(rol_id)
+		ON DELETE RESTRICT
+		ON UPDATE CASCADE
+);
+
+CREATE TABLE permisos_x_roles(
+	pxr_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+	permiso INT UNSIGNED,
+	rol INT UNSIGNED,
+	FOREIGN KEY (permiso)
+		REFERENCES permisos(permiso_id)
+		ON DELETE RESTRICT
+		ON UPDATE CASCADE,
+	FOREIGN KEY (rol)
+		REFERENCES roles(rol_id)
+		ON DELETE RESTRICT
+		ON UPDATE CASCADE
+);

@@ -1,0 +1,68 @@
+{
+    "peliculas": [
+        {
+            "pelicula_id": "",
+            "año_lanzamiento": "",
+            "duracion": "",
+            "titulo": "",
+            "poster": "",
+            "sinopsis": "",
+            "trailer": "",
+            "director": "",
+            "pais": "",
+            "genero": [
+                "",
+                "",
+                ""
+            ]
+        },
+        {
+            "pelicula_id": "",
+            "año_lanzamiento": "",
+            "duracion": "",
+            "titulo": "",
+            "poster": "",
+            "sinopsis": "",
+            "trailer": "",
+            "director": "",
+            "pais": "",
+            "genero": [
+                "",
+                "",
+                ""
+            ]
+        },
+        {
+            "pelicula_id": "",
+            "año_lanzamiento": "",
+            "duracion": "",
+            "titulo": "",
+            "poster": "",
+            "sinopsis": "",
+            "trailer": "",
+            "director": "",
+            "pais": "",
+            "genero": [
+                "",
+                "",
+                ""
+            ]
+        },
+        {
+            "pelicula_id": "",
+            "año_lanzamiento": "",
+            "duracion": "",
+            "titulo": "",
+            "poster": "",
+            "sinopsis": "",
+            "trailer": "",
+            "director": "",
+            "pais_id": "",
+            "genero": [
+                "",
+                "",
+                ""
+            ]
+        }
+    ]
+}
