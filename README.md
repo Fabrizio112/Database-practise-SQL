@@ -1,7 +1,7 @@
 # <img style="padding-right:0.5rem" src='https://img.freepik.com/vector-premium/bandera-argentina-bandera-argentina-ilustracion-vectorial_685751-66.jpg' width="50px" >  <span style="font-size:3rem">ESPAÑOL:</span>
 ## <i align="center" style="font-size:2rem">📊 PRACTICA DE BASE DE DATOS </i>
 
- _Este repositorio fue construido con el proposito de practicar SQL_
+ _Este repositorio fue construido con el proposito de practicar SQL._
 <p align="center">
 <img width="600px" heigth="600px" src="./images/criminal-database.gif" alt="gatos criminales">
 </p>
